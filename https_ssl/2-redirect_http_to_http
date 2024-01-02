@@ -1,5 +1,4 @@
-
-bal
+global
         log /dev/log    local0
         log /dev/log    local1 notice
         chroot /var/lib/haproxy
@@ -51,7 +50,7 @@ listen stats
 
 frontend ALL
         bind *:80
-        bind *:443 ssl crt /etc/ssl_cert/abimbolaronald.tech/abimbolaronald.tech.pem
+        bind *:443 ssl crt /etc/ssl_cert/irakoze.tech/irakoze.tech.pem
         mode http
 
         # Define path for lets encrypt
@@ -69,5 +68,5 @@ backend letsencrypt
  
 backend lb-backend
         balance roundrobin
-        server web-01 54.234.216.53:80 check
-        server web-02 34.228.165.232:80 check
+        server web-01 34.201.138.140:80 check
+        server web-02 34.202.160.10:80 check
